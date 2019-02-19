@@ -18,6 +18,14 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main.container {
+  width: 450px;
+  margin: 140px auto 0 auto; 
+  padding: 2%;
+  background-color: white;
 }
 
 /*
