@@ -40,9 +40,10 @@ article.tweets_entry {
   border-radius: 10px;
   border: 1px solid #dddddd;
   padding-bottom: 40px;
+  margin: 20px 0px;
 }
 
-article.tweets_entry.hover {
+article.tweets_entry:hover {
   border-radius: 10px;
   border: 1px solid #8d8d8d;
   padding-bottom: 40px;
@@ -69,7 +70,8 @@ article.tweets_entry.hover {
   opacity: 0.75;
 }
 
-.tweets_header img.hover {
+/* Changes style for image when the whole tweets_entry article element is hovered over */
+article.tweets_entry:hover .tweets_header img {
   width: 80px;
   height: 80px;
   float: left;
@@ -78,13 +80,22 @@ article.tweets_entry.hover {
   opacity: 1;
 }
 
+/* .tweets_header img.hover {
+  width: 80px;
+  height: 80px;
+  float: left;
+  border-radius: 10px;
+  margin-right: 1em;
+  opacity: 1;
+} */
+
 .tweets_header h2 {
   color: #4a666d;
   margin: 0;
   float: left;
 }
 
-.tweets_header h2.hover {
+article.tweets_entry:hover .tweets_header h2 {
   color: #244751;
   margin: 0;
   float: left;
@@ -100,7 +111,7 @@ article.tweets_entry.hover {
   font-size: 80%;
 }
 
-.tweets_header h3.hover {
+article.tweets_entry:hover .tweets_header h3 {
   position: relative;
   top: 10px;
   margin: 0;
@@ -133,7 +144,7 @@ article.tweets_entry.hover {
   margin: 0 1em 0 0;
 }
 
-.tweets_buttons.hover {
+article.tweets_entry:hover .tweets_buttons {
   display: block;
   margin: 0 1em 0 0;
 }
