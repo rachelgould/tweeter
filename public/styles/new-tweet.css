@@ -19,3 +19,8 @@ section.new-tweet {
 .counter {
     float: right;
 }
+
+.counter.red {
+    float: right;
+    color: red;
+}

@@ -29,6 +29,66 @@ main.container {
   background-color: white;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* Tweets List */
+
+section.tweets {
+  margin: 0 2em;
+  background-color: white;
+}
+
+article.tweets_entry {
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+}
+
+/* Spacer between article tags for each tweet entry */
+.spacer {
+  padding: 2em 0 0 0;
+}
+
+.tweets_header {
+  background-color: #eee;
+  border-radius: 10px 10px 0 0;
+  padding: 1em;
+  height: 115px;
+}
+
+.tweets_header img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  border-radius: 10px;
+  margin-right: 1em;
+}
+
+.tweets_header h2 {
+  margin: 0;
+  float: left;
+}
+
+.tweets_header h3 {
+  position: relative;
+  top: 10px;
+  margin: 0;
+  float: right;
+  font-weight: 300;
+  color: #9b9b9b;
+  font-size: 80%;
+}
+
+.tweets hr {
+  border: none;
+  border-top: 1px solid rgb(223, 223, 223);
+  margin: 0;
+}
+
+.tweets_content {
+  padding: 0.75em 1em;
+  font-size: 125%;
+}
+
+.tweets_date {
+  padding: 0.5em 1em;
+  margin: 0;
+  font-weight: 300;
+}

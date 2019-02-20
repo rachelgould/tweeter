@@ -36,8 +36,21 @@
         <form method="POST" action="/tweets/">
           <textarea name="text" id="new-tweet_input" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
-          <span class="counter">140</span>
+          <span class="counter" id="new-tweet_counter">140</span>
         </form>
+      </section>
+      <section class="tweets">
+      <div class="spacer"></div>
+      <article class="tweets_entry">
+        <div class="tweets_header">
+          <img src="https://vanillicon.com/v2/8e73b27568cb3be29e2da74d42eab6dd.svg" alt="dummy user avatar">
+          <h2>Bill Fields</h2>
+          <h3>@MrFields</h3>
+        </div>
+        <p class="tweets_content">Little tweet here!</p>
+        <hr>
+        <p class="tweets_date">10 days ago</p>
+      </article>
       </section>
     </main>
 

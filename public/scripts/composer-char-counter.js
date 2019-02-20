@@ -1,7 +1,10 @@
 $(document).ready(function() {
     $('#new-tweet_input').keyup(function() {
-        const $charsUsed = $(this).val().length;
-        let charsRemaining = 140 - $charsUsed;
-        console.log(charsRemaining);
+        let charactersLeft = 140 - $(this).val().length;
+        if(charactersLeft >= 0) {
+            $('#new-tweet_counter').text(charactersLeft).removeClass('red');
+        } else if (charactersLeft < 0) {
+            $('#new-tweet_counter').text(charactersLeft).addClass('red');
+        }
     });
   });
