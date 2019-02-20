@@ -5,20 +5,20 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i" rel="stylesheet">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/nav.css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -35,7 +35,7 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
           <textarea name="text" id="new-tweet_input" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
+          <input type="submit" value="Tweet" id="new-tweet_button">
           <span class="counter" id="new-tweet_counter">140</span>
         </form>
       </section>

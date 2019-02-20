@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     const data = [
         {
           "user": {
@@ -55,14 +54,14 @@ $(document).ready(function() {
         
     function createTweetElement(data) {
         let daysSince = function(date) {
-            let days = 0; // FIX THIS!
+            let days = 0; // ** FIX THIS!
             return `${days} days ago`;
         }
         let $article = $('<article>').addClass('tweets_entry');
         // Everything is nested inside the article:
-        let $header = $('<div>').addClass('tweets_header');
+        let $header = $('<div>').addClass('tweets_header');// ** can add .appendTo($article)
         // Elements nested inside the header of the tweet:
-        let $avatar = $(`<img src="${data.user.avatars.regular}" alt="${data.user.name} avatar">`);
+        let $avatar = $(`<img src="${data.user.avatars.regular}" alt="${data.user.name} avatar">`); // ** add src after, (.attr = object with src + alt)
         let $fullName = $('<h2>').text(data.user.name);
         let $userName = $('<h3>').text(data.user.handle);
         // Siblings of the header:
@@ -70,6 +69,7 @@ $(document).ready(function() {
         let $date = $('<p>').addClass('tweets_date').text(daysSince(data['created_at']));
         let $buttonContainer = $('<div>').addClass('tweets_buttons');
         // Inside the button container:
+        // ** array of button images, loop through it to create the img tags
         let $button1 = $('<img src="https://vanillicon.com/v2/d38210281760fba56ba70f58c0065f7a.svg">');
         let $button2 = $('<img src="https://vanillicon.com/v2/d38210281760fba56ba70f58c0065f7a.svg">');
         let $button3 = $('<img src="https://vanillicon.com/v2/d38210281760fba56ba70f58c0065f7a.svg">');
@@ -82,6 +82,19 @@ $(document).ready(function() {
                     .append($($buttonContainer).append($($button1), $($button2), $($button3)));
         return $tweet;
     }
-      
     renderTweets(data);
+
+    // -------------------------
+    // Listen for new tweets being added & submit AJAX request
+    $('.new-tweet form').on('submit', function (event) {
+        event.preventDefault();
+        const data = $('.new-tweet form').serialize();
+        console.log(data);
+        $.post('/tweets', data);
+            // .then(() => {
+            //     renderTweets()
+            // })
+    });
+
   });
+

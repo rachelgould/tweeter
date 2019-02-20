@@ -58,7 +58,9 @@ article.tweets_entry:hover {
   background-color: #eee;
   border-radius: 10px 10px 0 0;
   padding: 1em;
-  height: 115px;
+  min-height: 115px;
+  overflow: hidden; 
+  /* last line lets this div grow with its content */
 }
 
 .tweets_header img {
@@ -80,19 +82,12 @@ article.tweets_entry:hover .tweets_header img {
   opacity: 1;
 }
 
-/* .tweets_header img.hover {
-  width: 80px;
-  height: 80px;
-  float: left;
-  border-radius: 10px;
-  margin-right: 1em;
-  opacity: 1;
-} */
-
 .tweets_header h2 {
   color: #4a666d;
   margin: 0;
   float: left;
+  max-width: 125px;
+  word-break: break-word;
 }
 
 article.tweets_entry:hover .tweets_header h2 {
@@ -109,6 +104,7 @@ article.tweets_entry:hover .tweets_header h2 {
   font-weight: 300;
   color: #9b9b9b;
   font-size: 80%;
+  word-wrap: break-word;
 }
 
 article.tweets_entry:hover .tweets_header h3 {
