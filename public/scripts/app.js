@@ -9,14 +9,15 @@ $(document).ready(function() {
         
     function createTweetElement(data) {
         let daysSince = function(date) {
-            let days = 0; // ** FIX THIS!
+            // Date.now() is in milliseconds, and there are 86400000 milliseconds in a day
+            let days = Math.floor((Date.now() - date) / 86400000);
             return `${days} days ago`;
         }
         let $article = $('<article>').addClass('tweets_entry');
         // Everything is nested inside the article:
-        let $header = $('<div>').addClass('tweets_header');// ** can add .appendTo($article)
+        let $header = $('<div>').addClass('tweets_header');
         // Elements nested inside the header of the tweet:
-        let $avatar = $(`<img src="${data.user.avatars.regular}" alt="${data.user.name} avatar">`); // ** add src after, (.attr = object with src + alt)
+        let $avatar = $('<img>').attr('src', data.user.avatars.regular).attr('alt', `${data.user.name} avatar`);
         let $fullName = $('<h2>').text(data.user.name);
         let $userName = $('<h3>').text(data.user.handle);
         // Siblings of the header:
@@ -24,17 +25,14 @@ $(document).ready(function() {
         let $date = $('<p>').addClass('tweets_date').text(daysSince(data['created_at']));
         let $buttonContainer = $('<div>').addClass('tweets_buttons');
         // Inside the button container:
-        // ** array of button images, loop through it to create the img tags
-        let $button1 = $('<img src="https://vanillicon.com/v2/d38210281760fba56ba70f58c0065f7a.svg">');
-        let $button2 = $('<img src="https://vanillicon.com/v2/d38210281760fba56ba70f58c0065f7a.svg">');
-        let $button3 = $('<img src="https://vanillicon.com/v2/d38210281760fba56ba70f58c0065f7a.svg">');
+        let buttonUrls = ["https://image.flaticon.com/icons/svg/149/149261.svg", "https://image.flaticon.com/icons/svg/1250/1250694.svg", "https://image.flaticon.com/icons/svg/149/149217.svg"];
         let $tweet = $($article)
                     .append($($header)
                         .append($($avatar), $($fullName), $($userName)))
                     .append($($content))
                     .append('<hr>')
                     .append($($date))
-                    .append($($buttonContainer).append($($button1), $($button2), $($button3)));
+                    .append($($buttonContainer).append($('<img>').attr('src', buttonUrls[2]), $('<img>').attr('src', buttonUrls[1]),$('<img>').attr('src', buttonUrls[0])));
         return $tweet;
     }
 
