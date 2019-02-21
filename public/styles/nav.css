@@ -1,13 +1,15 @@
-#nav-bar {
+nav#nav-bar {
   position: fixed;
   top: 0px;
   background-color: #00a087;
   color: #e8fdff;
-  height: 80px;
+  min-height: 80px;
   line-height: 80px;
   width: 100%;
   padding: 0 2em;
   z-index: 1000;
+  overflow: hidden;
+  text-align: center;
   }
   
 #nav-bar .logo {
@@ -23,3 +25,22 @@
   font-size: 2em;
   vertical-align: middle;
   }
+
+#nav-bar button {
+  float: right;
+  background-color: white;
+  color: #00a087;
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 60px;
+  margin-top: 10px;
+  opacity: 0.75;
+}
+
+#nav-bar button:hover {
+  color: black;
+  opacity: 1;
+}

@@ -1,7 +1,9 @@
 $(document).ready(function() {
     function renderTweets(tweets) {
+        // First, delete all children of #tweets-container to prevent duplicates from being rendered
+        $('#tweets-container').empty();
         for (let tweet in tweets) {
-            $('#tweets-container').append(createTweetElement(tweets[tweet]));
+            $('#tweets-container').prepend(createTweetElement(tweets[tweet]));
         }
     }
         
@@ -40,9 +42,12 @@ $(document).ready(function() {
     // Listen for new tweets being added & submit AJAX POST request
     $('.new-tweet form').on('submit', function (event) {
         event.preventDefault();
+        $('.new-tweet_error').slideUp();
         let tweetLength = $('#new-tweet_input').val().length;
-        if (tweetLength === 0 || tweetLength > 140) {
-            alert('There was a problem with your tweet! Please try again.')
+        if (tweetLength === 0) {
+            $('.new-tweet_error').text('Please write something!').slideDown();
+        }else if (tweetLength > 140) {
+            $('.new-tweet_error').text('Your tweet is too long! Try again.').slideDown();
         } else {
             const data = $(this).serialize();
             $.post('/tweets', data)
@@ -50,7 +55,6 @@ $(document).ready(function() {
                 .then(() => {
                     // Clear the textarea
                     $('#new-tweet_input').val(null);
-                    // Add something to clear screen you don't see double?
                     loadTweets();
                 })
         }
@@ -66,5 +70,12 @@ $(document).ready(function() {
     }
     loadTweets();
 
+    // -------------------------
+    // When user presses button to compose tweet, slide down the form.
+    $('#nav-bar button').on('click', function(event) {
+        $('section.new-tweet').slideToggle(function() {
+            $('#new-tweet_input').select();
+        });
+    })
   });
 

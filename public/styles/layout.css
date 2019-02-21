@@ -34,6 +34,8 @@ main.container {
 section.tweets {
   margin: 0 2em;
   background-color: white;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 article.tweets_entry {
@@ -86,7 +88,7 @@ article.tweets_entry:hover .tweets_header img {
   color: #4a666d;
   margin: 0;
   float: left;
-  max-width: 125px;
+  max-width: 115px;
   word-break: break-word;
 }
 
@@ -104,7 +106,6 @@ article.tweets_entry:hover .tweets_header h2 {
   font-weight: 300;
   color: #9b9b9b;
   font-size: 80%;
-  word-wrap: break-word;
 }
 
 article.tweets_entry:hover .tweets_header h3 {
