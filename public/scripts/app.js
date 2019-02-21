@@ -40,16 +40,20 @@ $(document).ready(function() {
     // Listen for new tweets being added & submit AJAX POST request
     $('.new-tweet form').on('submit', function (event) {
         event.preventDefault();
-        const data = $('.new-tweet form').serialize();
-        console.log(data);
-        $.post('/tweets', data)
-            // Then refresh the page to show the new tweet
-            .then(() => {
-                // Clear the textarea
-                $('#new-tweet_input').val(null);
-                // Add something to clear screen you don't see double?
-                loadTweets();
-            })
+        let tweetLength = $('#new-tweet_input').val().length;
+        if (tweetLength === 0 || tweetLength > 140) {
+            alert('There was a problem with your tweet! Please try again.')
+        } else {
+            const data = $(this).serialize();
+            $.post('/tweets', data)
+                // Then refresh the page to show the new tweet
+                .then(() => {
+                    // Clear the textarea
+                    $('#new-tweet_input').val(null);
+                    // Add something to clear screen you don't see double?
+                    loadTweets();
+                })
+        }
     });
 
     // -------------------------
