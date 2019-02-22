@@ -1,3 +1,47 @@
+@media (max-width: 768px) {
+  nav#nav-bar {
+    position: fixed;
+    top: 0px;
+    background-color: #00a087;
+    color: #eee;
+    height: 10vw;
+    line-height: 15vw;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  #nav-bar .logo {
+    height: 15vw;
+    width: 15vw;
+    margin-right: 2em;
+    vertical-align: middle;
+  }
+  #nav-bar .header {
+    font-size: 2em;
+    vertical-align: middle;
+  }
+  #nav-bar button {
+    background-color: white;
+    color: #00a087;
+    width: 30vw;
+    height: 15vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 15vw;
+    margin: 5vw 5vw;
+    opacity: 0.75;
+  }
+  #nav-bar button:hover {
+    color: black;
+    opacity: 1;
+  }
+}
 nav#nav-bar {
   position: fixed;
   top: 0px;
@@ -74,6 +118,134 @@ section.new-tweet {
   padding-top: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 0;
+    color: #244751;
+    background-color: #eee;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  main.container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: white;
+  }
+
+  /* Tweets List */
+  section.tweets {
+    margin: 0;
+    background-color: white;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  article.tweets_entry {
+    width: 80vw;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    padding-bottom: 2vh;
+    margin: 0;
+  }
+
+  article.tweets_entry:hover {
+    border-radius: 10px;
+    border: 1px solid #8d8d8d;
+    padding-bottom: 4vh;
+  }
+
+  .tweets_header {
+    background-color: #eee;
+    border-radius: 10px 10px 0 0;
+    padding: 1em;
+    min-height: 115px;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* last line lets this div grow with its content */
+  }
+
+  .tweets_header img {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 10px;
+    margin-right: 1em;
+    opacity: 0.75;
+  }
+  .tweets_header h2 {
+    color: #4a666d;
+    margin: 0;
+    max-width: 70vw;
+    word-break: break-word;
+    flex-grow: 1;
+  }
+  .tweets_header h3 {
+    position: relative;
+    top: 10px;
+    margin: 0;
+    font-weight: 300;
+    color: #9b9b9b;
+    font-size: 80%;
+  }
+
+  /* Changes style for image when the whole tweets_entry article element is hovered over */
+  article.tweets_entry:hover .tweets_header img {
+    opacity: 1;
+  }
+  article.tweets_entry:hover .tweets_header h2 {
+    color: #244751;
+    margin: 0;
+    float: left;
+  }
+  article.tweets_entry:hover .tweets_header h3 {
+    font-weight: 300;
+    color: #757575;
+  }
+  article.tweets_entry:hover .tweets_buttons {
+    display: block;
+    margin: 0 1em 0 0;
+  }
+
+  .tweets hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 0;
+  }
+
+  .tweets_content {
+    padding: 0.75em 1em;
+    font-size: 125%;
+  }
+
+  .tweets_date {
+    float: left;
+    padding: 0.5em 1em;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .tweets_buttons {
+    display: none;
+    margin: 0 1em 0 0;
+  }
+
+  .tweets_buttons img {
+    float: right;
+    height: 25px;
+    width: 25px;
+    margin: 5px 0 0 5px;
+  }
+}
 html {
   box-sizing: border-box;
 }
@@ -90,7 +262,7 @@ body {
 }
 
 main.container {
-  width: 450px;
+  width: 600px;
   height: 100%;
   margin: 0 auto;
   padding: 140px 2%;
@@ -118,11 +290,6 @@ article.tweets_entry:hover {
   padding-bottom: 40px;
 }
 
-/* Spacer between article tags for each tweet entry */
-.spacer {
-  padding: 2em 0 0 0;
-}
-
 .tweets_header {
   background-color: #eee;
   border-radius: 10px 10px 0 0;
@@ -144,7 +311,7 @@ article.tweets_entry:hover {
   color: #4a666d;
   margin: 0;
   float: left;
-  max-width: 115px;
+  max-width: 250px;
   word-break: break-word;
 }
 .tweets_header h3 {
@@ -187,7 +354,7 @@ article.tweets_entry:hover .tweets_buttons {
 
 .tweets hr {
   border: none;
-  border-top: 1px solid white;
+  border-top: 1px solid #eee;
   margin: 0;
 }
 

@@ -5,6 +5,58 @@ $backgrounds: white;
 $button-accent: black;
 //---------------------
 
+@media (max-width: 768px) {
+  nav#nav-bar {
+    position: fixed;
+    top: 0px;
+    background-color: $nav;
+    color: $light-accent;
+    height: 10vw;
+    line-height: 15vw;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    }
+  
+  #nav-bar {
+    .logo {
+      height: 15vw;
+      width: 15vw;
+      margin-right: 2em;
+      vertical-align: middle;
+      }
+  
+    .header {
+      font-size: 2em;
+      vertical-align: middle;
+      }
+  
+    button {
+      background-color: $backgrounds;
+      color: $nav;
+      width: 30vw;
+      height: 15vw;
+      border-radius: 10px;
+      border: 1px solid $button-accent;
+      text-align: center;
+      line-height: 15vw;
+      margin: 5vw 5vw;
+      opacity: 0.75;
+    }
+  
+    button:hover {
+      color: $button-accent;
+      opacity: 1;
+    }
+  }
+}
+
+// Desktop:
+
 nav#nav-bar {
   position: fixed;
   top: 0px;
