@@ -87,6 +87,7 @@ $(document).ready(function() {
   // When user presses button to compose tweet, slide down the form.
   $('#nav-bar button').on('click', function(event) {
     $('section.new-tweet').slideToggle(function() {
+      $(window).scrollTop(0);
       $('#new-tweet_input').select();
     });
   })
