@@ -4,8 +4,8 @@ Tweeter is a simple, single-page Twitter clone using HTML, CSS, JS, jQuery and A
 
 ## Screenshots
 
-!["Compose a tweet"](/docs/compose-tweet)
-!["Mousing over a tweet"](/docs/tweet-mouseover)
+!["Compose a tweet"](https://github.com/rachelgould/tweeter/blob/master/docs/compose-tweet.png?raw=true)
+!["Mousing over a tweet"](https://github.com/rachelgould/tweeter/blob/master/docs/tweet-mouseover.png?raw=true)
 
 ## Getting Started
 
