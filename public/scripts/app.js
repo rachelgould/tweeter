@@ -9,16 +9,18 @@ $(document).ready(function() {
   }
   // Create the text shown in the bottom left showing how long ago the tweet was made
   let daysSince = function(date) {
+    console.log(Date.now(), date);
     let msDiff = Date.now() - date;
-    let days = Math.floor((Date.now() - date) / 86400000);
+    let days = Math.floor(msDiff / 86400000);
     if (days === 0) {
       let hours = Math.floor(msDiff / 3600000);
       if (hours === 0) {
         let minutes = Math.floor(msDiff / 60000);
-        if (minutes === 0) {
-          let seconds = Math.floor(msDiff / 1000);
+        if (minutes <= 0) {
+          let secs = Math.floor(msDiff / 1000);
+          return `${secs} seconds ago`;
         } else {
-          return `${seconds} seconds ago`;
+          return `${minutes} minutes ago`;
         }
       } else {
         return `${hours} hours ago`;
@@ -35,6 +37,7 @@ $(document).ready(function() {
     // Elements nested inside the header of the tweet:
     let $avatar = $('<img>').attr('src', data.user.avatars.regular).attr('alt', `${data.user.name} avatar`);
     let $fullName = $('<h2>').text(data.user.name);
+    console.log(data.user.name)
     let $userName = $('<h3>').text(data.user.handle);
     // Siblings of the header:
     let $content = $('<p>').addClass('tweets_content').text(data.content.text);
