@@ -15,9 +15,8 @@ $(document).ready(function() {
       let hours = Math.floor(msDiff / 3600000);
       if (hours === 0) {
         let minutes = Math.floor(msDiff / 60000);
-        if (minutes <= 0) {
-          let secs = Math.floor(msDiff / 1000);
-          return `${secs} seconds ago`;
+        if (minutes <= 5) {
+          return `Posted just now`;
         } else {
           return `${minutes} minutes ago`;
         }
