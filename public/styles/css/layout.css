@@ -1,0 +1,218 @@
+nav#nav-bar {
+  position: fixed;
+  top: 0px;
+  background-color: #00a087;
+  color: #eee;
+  min-height: 80px;
+  line-height: 80px;
+  width: 100%;
+  padding: 0 2em;
+  z-index: 1000;
+  overflow: hidden;
+  text-align: center;
+}
+
+#nav-bar .logo {
+  height: 80px;
+  width: 80px;
+  float: left;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+#nav-bar .header {
+  float: left;
+  font-size: 2em;
+  vertical-align: middle;
+}
+#nav-bar button {
+  float: right;
+  background-color: white;
+  color: #00a087;
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 60px;
+  margin-top: 10px;
+  opacity: 0.75;
+}
+#nav-bar button:hover {
+  color: black;
+  opacity: 1;
+}
+
+section.new-tweet {
+  display: none;
+  margin: 0 2em;
+  padding: 1em;
+  background-color: #eee;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+}
+
+.new-tweet h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #244751;
+}
+.new-tweet textarea {
+  width: 100%;
+  padding: 7px;
+}
+.new-tweet .counter {
+  float: right;
+}
+.new-tweet .counter.red {
+  float: right;
+  color: red;
+}
+.new-tweet .new-tweet_error {
+  display: none;
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: "Open Sans", sans-serif;
+}
+
+main.container {
+  width: 450px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 140px 2%;
+  background-color: white;
+}
+
+/* Tweets List */
+section.tweets {
+  margin: 0 2em;
+  background-color: white;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+article.tweets_entry {
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+  padding-bottom: 40px;
+  margin: 20px 0px;
+}
+
+article.tweets_entry:hover {
+  border-radius: 10px;
+  border: 1px solid #8d8d8d;
+  padding-bottom: 40px;
+}
+
+/* Spacer between article tags for each tweet entry */
+.spacer {
+  padding: 2em 0 0 0;
+}
+
+.tweets_header {
+  background-color: #eee;
+  border-radius: 10px 10px 0 0;
+  padding: 1em;
+  min-height: 115px;
+  overflow: hidden;
+  /* last line lets this div grow with its content */
+}
+
+.tweets_header img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  border-radius: 10px;
+  margin-right: 1em;
+  opacity: 0.75;
+}
+.tweets_header h2 {
+  color: #4a666d;
+  margin: 0;
+  float: left;
+  max-width: 115px;
+  word-break: break-word;
+}
+.tweets_header h3 {
+  position: relative;
+  top: 10px;
+  margin: 0;
+  float: right;
+  font-weight: 300;
+  color: #9b9b9b;
+  font-size: 80%;
+}
+
+/* Changes style for image when the whole tweets_entry article element is hovered over */
+article.tweets_entry:hover .tweets_header img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  border-radius: 10px;
+  margin-right: 1em;
+  opacity: 1;
+}
+article.tweets_entry:hover .tweets_header h2 {
+  color: #244751;
+  margin: 0;
+  float: left;
+}
+article.tweets_entry:hover .tweets_header h3 {
+  position: relative;
+  top: 10px;
+  margin: 0;
+  float: right;
+  font-weight: 300;
+  color: #757575;
+  font-size: 80%;
+}
+article.tweets_entry:hover .tweets_buttons {
+  display: block;
+  margin: 0 1em 0 0;
+}
+
+.tweets hr {
+  border: none;
+  border-top: 1px solid white;
+  margin: 0;
+}
+
+.tweets_content {
+  padding: 0.75em 1em;
+  font-size: 125%;
+}
+
+.tweets_date {
+  float: left;
+  padding: 0.5em 1em;
+  margin: 0;
+  font-weight: 300;
+}
+
+.tweets_buttons {
+  display: none;
+  margin: 0 1em 0 0;
+}
+
+.tweets_buttons img {
+  float: right;
+  height: 25px;
+  width: 25px;
+  margin: 5px 0 0 5px;
+}
+
+/*# sourceMappingURL=layout.css.map */

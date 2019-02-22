@@ -1,0 +1,163 @@
+@import '_nav';
+@import '_new-tweet';
+
+$font-stack: 'Open Sans', sans-serif;
+
+// Color Scheme:
+$dark-main: #244751;
+$dark-unfocus: #4a666d;
+$light-main: #9b9b9b;
+$light-unfocus: #757575;
+$light-accent: #eee;
+$backgrounds: white;
+$light-border: #dddddd;
+$dark-border: #8d8d8d;
+//---------------------
+
+ html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  color: $dark-main;
+  background-color: $light-accent;
+  font-family: $font-stack;
+}
+
+main.container {
+  width: 450px;
+  height: 100%;
+  margin: 0 auto; 
+  padding: 140px 2%;
+  background-color: $backgrounds;
+}
+
+/* Tweets List */
+
+section.tweets {
+  margin: 0 2em;
+  background-color: $backgrounds;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+article.tweets_entry {
+  border-radius: 10px;
+  border: 1px solid $light-border;
+  padding-bottom: 40px;
+  margin: 20px 0px;
+}
+
+article.tweets_entry:hover {
+  border-radius: 10px;
+  border: 1px solid $dark-border;
+  padding-bottom: 40px;
+}
+
+/* Spacer between article tags for each tweet entry */
+.spacer {
+  padding: 2em 0 0 0;
+}
+
+.tweets_header {
+  background-color: $light-accent;
+  border-radius: 10px 10px 0 0;
+  padding: 1em;
+  min-height: 115px;
+  overflow: hidden; 
+  /* last line lets this div grow with its content */
+}
+
+.tweets_header {
+  img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border-radius: 10px;
+    margin-right: 1em;
+    opacity: 0.75;
+  }
+  h2 {
+    color: $dark-unfocus;
+    margin: 0;
+    float: left;
+    max-width: 115px;
+    word-break: break-word;
+  }
+  h3 {
+    position: relative;
+    top: 10px;
+    margin: 0;
+    float: right;
+    font-weight: 300;
+    color: $light-main;
+    font-size: 80%;
+  }
+} 
+
+/* Changes style for image when the whole tweets_entry article element is hovered over */
+article.tweets_entry:hover {
+  .tweets_header {
+    img {
+      width: 80px;
+      height: 80px;
+      float: left;
+      border-radius: 10px;
+      margin-right: 1em;
+      opacity: 1;
+    }
+    h2 {
+      color: $dark-main;
+      margin: 0;
+      float: left;
+    }
+    h3 {
+      position: relative;
+      top: 10px;
+      margin: 0;
+      float: right;
+      font-weight: 300;
+      color: $light-unfocus;
+      font-size: 80%;
+    }
+  }
+  .tweets_buttons {
+    display: block;
+    margin: 0 1em 0 0;
+  }
+}
+
+.tweets hr {
+  border: none;
+  border-top: 1px solid $backgrounds;
+  margin: 0;
+}
+
+.tweets_content {
+  padding: 0.75em 1em;
+  font-size: 125%;
+}
+
+.tweets_date {
+  float: left;
+  padding: 0.5em 1em;
+  margin: 0;
+  font-weight: 300;
+}
+
+.tweets_buttons {
+  display: none;
+  margin: 0 1em 0 0;
+}
+
+.tweets_buttons img {
+  float: right;
+  height: 25px;
+  width: 25px;
+  margin: 5px 0 0 5px;
+}

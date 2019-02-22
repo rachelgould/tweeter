@@ -1,0 +1,44 @@
+// Color Scheme:
+$dark-main: #244751;
+$light-accent: #eee;
+$light-border: #dddddd;
+$warning: red;
+//---------------------
+
+section.new-tweet {
+  display: none;
+  margin: 0 2em;
+  padding: 1em;
+  background-color: $light-accent;
+  border-radius: 10px;
+  border: 1px solid $light-border;
+}
+
+.new-tweet {
+  h2 {
+    margin-top: 0;
+    border-bottom: 1px solid $dark-main;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 7px;
+  }
+
+  .counter {
+    float: right;
+  }
+
+  .counter.red {
+    float: right;
+    color: $warning;
+  }
+  
+  .new-tweet_error {
+    display: none;
+    color: $warning;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
