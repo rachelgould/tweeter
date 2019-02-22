@@ -7,14 +7,28 @@ $(document).ready(function() {
       $('#tweets-container').prepend(createTweetElement(tweets[tweet]));
     }
   }
-  // Helper function to create the HTML that makes up a tweet entry
-  function createTweetElement(data) {
-    // Create the text shown in the bottom left showing how long ago the tweet was made
-    let daysSince = function(date) {
-      // date and Date.now() is in milliseconds, and there are 86400000 milliseconds in a day
-      let days = Math.floor((Date.now() - date) / 86400000);
+  // Create the text shown in the bottom left showing how long ago the tweet was made
+  let daysSince = function(date) {
+    let msDiff = Date.now() - date;
+    let days = Math.floor((Date.now() - date) / 86400000);
+    if (days === 0) {
+      let hours = Math.floor(msDiff / 3600000);
+      if (hours === 0) {
+        let minutes = Math.floor(msDiff / 60000);
+        if (minutes === 0) {
+          let seconds = Math.floor(msDiff / 1000);
+        } else {
+          return `${seconds} seconds ago`;
+        }
+      } else {
+        return `${hours} hours ago`;
+      }
+    } else {
       return `${days} days ago`;
     }
+  }
+  // Helper function to create the HTML that makes up a tweet entry
+  function createTweetElement(data) {
     let $article = $('<article>').addClass('tweets_entry');
     // Everything is nested inside the article:
     let $header = $('<div>').addClass('tweets_header');
