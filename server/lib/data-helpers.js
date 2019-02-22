@@ -1,27 +1,24 @@
 "use strict";
 
-// Simulates the kind of delay we see with network or filesystem operations
-const simulateDelay = require("./util/simulate-delay");
+// We don't need to require MongoClient again because it's passing the whole db in from index.js
 
-// Defines helper functions for saving and getting tweets, using the database `db`
+// Defines helper functions for saving and getting tweets, using the MongoDB database
 module.exports = function makeDataHelpers(db) {
   return {
 
     // Saves a tweet to `db`
     saveTweet: function(newTweet, callback) {
-      simulateDelay(() => {
-        db.tweets.push(newTweet);
-        callback(null, true);
-      });
+      console.log(newTweet);
+      db.collection("tweets").insertOne(newTweet, (err, r) => {
+        callback(err, r)
+      })
     },
 
-    // Get all tweets in `db`, sorted by newest first
+    // Get all tweets in `db`
     getTweets: function(callback) {
-      simulateDelay(() => {
-        const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
-      });
+      db.collection("tweets").find().toArray((err, tweets) => {
+        callback(err, tweets); // There's a callback in tweets.js
+      })
     }
-
   };
 }

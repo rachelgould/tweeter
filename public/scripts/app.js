@@ -44,7 +44,7 @@ $(document).ready(function() {
         let tweetLength = $('#new-tweet_input').val().length;
         if (tweetLength === 0) {
             $('.new-tweet_error').text('Please write something!').slideDown();
-        }else if (tweetLength > 140) {
+        } else if (tweetLength > 140) {
             $('.new-tweet_error').text('Your tweet is too long! Try again.').slideDown();
         } else {
             const data = $(this).serialize();
