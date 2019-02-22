@@ -5,7 +5,7 @@ $backgrounds: white;
 $button-accent: black;
 //---------------------
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   nav#nav-bar {
     position: fixed;
     top: 0px;
